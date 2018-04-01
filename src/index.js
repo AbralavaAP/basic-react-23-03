@@ -1,6 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './app'
-import articles from './fixtures'
+import {render} from 'react-dom'
+import App from './components/App'
 
-ReactDOM.render(<App articles = {articles} />, document.getElementById('root'))
+render(<App/>, document.querySelector('#root'))
