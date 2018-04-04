@@ -1,9 +1,21 @@
 import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 import CommentList from '../comment-list'
 import CSSTransition from 'react-addons-css-transition-group'
 import './style.css'
 
 class Article extends PureComponent {
+    static propTypes = {
+        article: PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            text: PropTypes.string.isRequired,
+            id: PropTypes.string,
+            comments: PropTypes.array
+        }).isRequired,
+        isOpen: PropTypes.bool,
+        toggleOpen: PropTypes.func
+    }
+
     state = {
         error: null
     }
@@ -44,7 +56,7 @@ class Article extends PureComponent {
         return (
             <section className = "test--article__body">
                 {article.text}
-                <CommentList comments={article.comments}/>
+                <CommentList className = ".test--comment__body" comments={article.comments}/>
             </section>
         )
     }
