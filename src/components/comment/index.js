@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 function Comment({comment}) {
     return (
-        <div className = ".test--comment__body">
+        <div className = "test--comment__body">
             {comment.text} <b>by {comment.user}</b>
         </div>
     )
